@@ -84,7 +84,8 @@ void	stack_parse(char **str, t_list **a)
 
 void	algo_redirections(t_list **a, t_list **b)
 {
-	/* print_a(a); */
+	printf("Stack A before: \n")
+	print_a(a);
 	if (lstsize(*a) == 2)
 		sort_2(a);
 	else if (lstsize(*a) == 3)
@@ -95,5 +96,6 @@ void	algo_redirections(t_list **a, t_list **b)
 		sort_5(a, b);
 	else
 		radix_sort(a, b);
-	/* print_a(a); */
+	printf("Stack A after: \n")
+	print_a(a);
 }

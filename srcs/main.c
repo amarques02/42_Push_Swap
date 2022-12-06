@@ -19,7 +19,7 @@ void	print_a(t_list **a)
 	tmp = *a;
 	while (tmp)
 	{
-		printf("Num:%i Index:%i\n", tmp->data, tmp->index);
+		printf("Num:%i\n", tmp->data, tmp->index);
 		tmp = tmp->next;
 	}
 }
