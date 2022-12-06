@@ -6,7 +6,7 @@
 /*   By: amarques <amarques@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 16:48:13 by amarques          #+#    #+#             */
-/*   Updated: 2022/11/30 17:12:01 by amarques         ###   ########.fr       */
+/*   Updated: 2022/12/05 12:58:10 by amarques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	rrb(t_list **b)
 	write(1, "rrb\n", 4);
 }
 
-void rrr(t_list **a, t_list **b)
+void	rrr(t_list **a, t_list **b)
 {
 	rra(a);
 	rrb(b);

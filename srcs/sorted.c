@@ -6,13 +6,13 @@
 /*   By: amarques <amarques@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 19:23:21 by amarques          #+#    #+#             */
-/*   Updated: 2022/12/01 15:24:10 by amarques         ###   ########.fr       */
+/*   Updated: 2022/12/05 12:52:01 by amarques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/push_swap.h"
 
-static int	check(t_list *a)
+int	check(t_list *a)
 {
 	while (a->next)
 	{

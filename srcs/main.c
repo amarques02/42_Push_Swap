@@ -6,7 +6,7 @@
 /*   By: amarques <amarques@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 16:53:32 by amarques          #+#    #+#             */
-/*   Updated: 2022/12/01 15:38:53 by amarques         ###   ########.fr       */
+/*   Updated: 2022/12/05 14:49:35 by amarques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	print_a(t_list **a)
 	tmp = *a;
 	while (tmp)
 	{
-		printf("%i\n", tmp->data);
+		printf("Num:%i Index:%i\n", tmp->data, tmp->index);
 		tmp = tmp->next;
 	}
 }

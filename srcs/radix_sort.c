@@ -1,41 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   list_utils2.c                                      :+:      :+:    :+:   */
+/*   radix_sort.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amarques <amarques@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/22 15:35:59 by amarques          #+#    #+#             */
-/*   Updated: 2022/12/01 15:18:36 by amarques         ###   ########.fr       */
+/*   Created: 2022/12/05 14:43:13 by amarques          #+#    #+#             */
+/*   Updated: 2022/12/05 16:43:17 by amarques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/push_swap.h"
 
-void	find_min(t_list *a, int *n)
+void	radix_sort(t_list **a, t_list **b)
 {
-	/* printf("Min:%ls\n", n); */
-	while (a)
-	{
-		if (*n > a->index)
-			*n = a->index;
-		a = a->next;
-	}
-}
+	int		max_bits;
+	int		i;
+	int		size;
+	t_list	*tmp;
 
-void	find_max(t_list *a, int *n)
-{
-	/* printf("Max:%ls\n", n); */
-	while (a)
+	max_bits = find_max_bits(*a);
+	i = -1;
+	while (++i < max_bits)
 	{
-		if (*n < a->index)
-			*n = a->index;
-		a = a->next;
+		size = lstsize(*a);
+		while (size--)
+		{
+			tmp = *a;
+			if ((tmp->index >> i & 1))
+				ra(a);
+			else
+				pb(a, b);
+		}
+		while (*b)
+			pa(a, b);
 	}
-}
-
-void	find_min_max(t_list *a, int *max, int *min)
-{
-	find_max(a, min);
-	find_min(a, max);
 }

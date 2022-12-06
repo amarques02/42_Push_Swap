@@ -6,7 +6,7 @@
 /*   By: amarques <amarques@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 15:32:35 by amarques          #+#    #+#             */
-/*   Updated: 2022/12/01 17:16:51 by amarques         ###   ########.fr       */
+/*   Updated: 2022/12/05 17:24:08 by amarques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,12 @@ static int	check_dup(t_list *stack, int n)
 	return (0);
 }
 
+static void	is_whitespace(char **str)
+{
+	while ((**str >= 9 && **str <= 13) || **str == ' ')
+		*str += 1;
+}
+
 int	ft_atoi(char **str, t_list **a)
 {
 	long	signal;
@@ -32,8 +38,7 @@ int	ft_atoi(char **str, t_list **a)
 
 	nb = 0;
 	signal = 1;
-	while ((**str >= 9 && **str <= 13) || **str == ' ')
-		*str += 1;
+	is_whitespace(str);
 	if (**str == '-' || **str == '+')
 	{
 		if (**str == '-')
@@ -51,8 +56,7 @@ int	ft_atoi(char **str, t_list **a)
 	}
 	if (**str && !((**str >= 9 && **str <= 13) || **str == ' '))
 		print_msg(a, 1);
-	while ((**str >= 9 && **str <= 13) || **str == ' ')
-		*str += 1;
+	is_whitespace(str);
 	return (nb);
 }
 
@@ -81,7 +85,6 @@ void	stack_parse(char **str, t_list **a)
 void	algo_redirections(t_list **a, t_list **b)
 {
 	/* print_a(a); */
-	/* printf("LIST SIZE:%d \n", lstsize(*a)); */
 	if (lstsize(*a) == 2)
 		sort_2(a);
 	else if (lstsize(*a) == 3)
@@ -90,15 +93,7 @@ void	algo_redirections(t_list **a, t_list **b)
 		sort_4(a, b);
 	else if (lstsize(*a) == 5)
 		sort_5(a, b);
-	/* else 
-	{
-		
-	} */
+	else
+		radix_sort(a, b);
 	/* print_a(a); */
 }
-
-/* static int is_whitespace(char **str)
-{
-	
-}
- */

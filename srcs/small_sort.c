@@ -6,7 +6,7 @@
 /*   By: amarques <amarques@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 18:56:56 by amarques          #+#    #+#             */
-/*   Updated: 2022/12/01 16:47:17 by amarques         ###   ########.fr       */
+/*   Updated: 2022/12/05 13:14:14 by amarques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	sort_2(t_list **a)
 
 void	sort_3(t_list **a)
 {
-	int min;
+	int	min;
 	int	n[3];
 
 	n[0] = (*a)->index;
@@ -52,7 +52,8 @@ void	sort_4(t_list **a, t_list **b)
 	while ((*a)->index != min && (*a)->index != max)
 		ra(a);
 	pb(a, b);
-	sort_3(a);
+	if (!check(*a))
+		sort_3(a);
 	pa(a, b);
 	if ((*a)->index == max)
 		ra(a);
@@ -72,7 +73,8 @@ void	sort_5(t_list **a, t_list **b)
 	while ((*a)->index != min && (*a)->index != max)
 		ra(a);
 	pb(a, b);
-	sort_3(a);
+	if (!check(*a))
+		sort_3(a);
 	if ((*b)->index < (*b)->next->index)
 		rb(b);
 	pa(a, b);
